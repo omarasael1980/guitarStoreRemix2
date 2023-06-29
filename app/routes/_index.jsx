@@ -1,39 +1,58 @@
-export const meta = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+import {getGuitarras} from "../models/guitarras.server"
+import {getPosts} from  "../models/posts.server"
+import {getCursos} from "../models/cursos.server"
+import { useLoaderData } from "@remix-run/react"
+import ListadoGuitarras from "../components/listado-guitarras"
+import ListadoPosts from "../components/listado-posts"
+import Curso from "../components/curso"
 
-export default function Index() {
-  return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+
+
+export function meta(){
+
+
 }
+
+export async function loader(){
+  const [ guitarras, posts, cursos] = await Promise.all([
+    getGuitarras(),
+    getPosts(),
+    getCursos()
+  ])
+
+
+
+  return {guitarras: guitarras.data, posts: posts.data, cursos: cursos.data}
+}
+function Index() {
+  const {guitarras, posts,cursos} = useLoaderData()
+
+  return (
+  <>
+    <main className="contenedor">
+     
+        <ListadoGuitarras
+      guitarras ={guitarras}
+      />
+     
+    </main>
+   
+      <Curso
+      cursos={cursos.attributes}
+      />
+  
+    <section className="contenedor">
+      <ListadoPosts
+      posts ={posts}
+      />
+
+    </section>
+   
+   
+  </>
+  )
+}
+
+export default Index
+
+  
