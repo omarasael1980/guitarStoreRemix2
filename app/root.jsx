@@ -51,7 +51,12 @@ import {
     }
     export default function App(){
         return <Document>
-                <Outlet/>
+                <Outlet
+                    context={{
+                        guitarLa: "GuitarLA",
+                        auth: true
+                    }}
+                />
     
            
     

@@ -3,6 +3,7 @@ import imagen from "../../public/img/nosotros.jpg"
 import styles from "../styles/nosotros.css"
 
 export function links(){
+ 
   return [
     {
       rel:"stylesheet",
@@ -26,6 +27,7 @@ export function meta(){
   )
 }
 function Nosotros() {
+
   return (
    <main className="contenedor nosotros">
         <h2 className="heading">Nosotros</h2>
