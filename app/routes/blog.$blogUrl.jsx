@@ -42,7 +42,7 @@ export  default function Blog() {
   
 
   return (
-    <article className="contenedor post">
+    <article className=" post">
        <img src={imagen.data.attributes.url} alt={`blog entrada ${titulo}`} />
         <div className="contenido">
           <h3 className="heading">{titulo}</h3>

@@ -1,5 +1,4 @@
-import { Outlet, useLoaderData } from '@remix-run/react'
-
+import { useLoaderData } from '@remix-run/react'
 import {getGuitarras} from '../models/guitarras.server'
 import ListadoGuitarras from '../components/listado-guitarras'
 
@@ -16,9 +15,11 @@ const guitarras = useLoaderData()
  
   return (
     <div>
+    
    <ListadoGuitarras
    guitarras={guitarras}
    />
+
     </div>
   )
 }

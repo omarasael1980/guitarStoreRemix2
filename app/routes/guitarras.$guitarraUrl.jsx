@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLoaderData } from '@remix-run/react'
 import { getGuitarra } from '../models/guitarras.server'
 
@@ -19,6 +19,7 @@ return guitarra
 }
 
 export function meta(data){
+
   if(!data){
     return{
       title:"GuitarraLA -- Guitarra no encontrada",
@@ -60,7 +61,7 @@ function Guitarra() {
   console.log(guitarraSeleccionada)
  }
     return (
-      <main className='contenedor guitarra'>
+      <div className='guitarra'>
         <img src={imagen.data.attributes.formats.medium.url} alt={`imagen de la guitarra ${nombre}`} />
         <div className='contenido'>
           <h3 className='heading'>{nombre}</h3>
@@ -86,7 +87,7 @@ function Guitarra() {
         </div>
 
        
-      </main>
+      </div>
     )
   }
   

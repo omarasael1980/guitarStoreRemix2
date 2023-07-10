@@ -6,6 +6,7 @@ function Guitarra({guitarra}) {
   return (
    
     <div className="guitarra">
+    
          <img src={imagen.data.attributes.formats.medium.url} alt={`guitarra ${nombre}`} />
         <div className="contenido">
             <h3>{nombre}</h3>
