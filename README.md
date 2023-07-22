@@ -1,3 +1,17 @@
+# GuitarLA, it's a webpage that belong to  a React course.
+
+It has been built in Remix, it consums a Strapi API [(see the project in my repository](https://github.com/omarasael1980/guitarrStore)), it has an index,  posts, guitar store and a  store cart.
+
+The index has general information, while in Store "Tienda" you can select any item and will open with the full information so you can select how many guitars you want to buy, when you click the button it will be save in the local storage and in the store cart
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/2597d534-dda8-4c22-b5a5-04ae2707fd99)
+
+
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/01f0137d-5efe-465b-8c9d-b663e5c811cb)
+
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/4dd013d7-baec-4c68-89bf-a8202bb6eccf)
+
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/00341276-f79b-468e-9c62-9c79764b7c50)
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
@@ -51,3 +65,6 @@ rm -rf app
 # copy your app over
 cp -R ../my-old-remix-app/app app
 ```
+# GuitarStoreRemix
+# GuitarStoreRemix
+
